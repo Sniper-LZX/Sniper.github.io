@@ -1,0 +1,4 @@
+sadlion.tk
+skip_render:
+	- README.md
+	- CNAME
