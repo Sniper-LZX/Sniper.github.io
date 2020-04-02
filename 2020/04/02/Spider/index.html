@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="-Pyhton编程 -Artificial Intellienges," />
+  <meta name="keywords" content="-Artificial Intellienges -Python爬虫," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="python备忘录">
+<meta name="description" content="Python爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="http://yoursite.com/2020/03/31/Python/index.html">
+<meta property="og:title" content="Spider">
+<meta property="og:url" content="http://yoursite.com/2020/04/02/Spider/index.html">
 <meta property="og:site_name" content="Dark Knight">
-<meta property="og:description" content="python备忘录">
-<meta property="article:published_time" content="2020-03-31T12:21:16.000Z">
-<meta property="article:modified_time" content="2020-04-02T12:04:20.801Z">
+<meta property="og:description" content="Python爬虫">
+<meta property="article:published_time" content="2020-04-02T11:55:18.000Z">
+<meta property="article:modified_time" content="2020-04-02T12:05:44.864Z">
 <meta property="article:author" content="SJ_Sniper">
-<meta property="article:tag" content="-Pyhton编程 -Artificial Intellienges">
+<meta property="article:tag" content="-Artificial Intellienges -Python爬虫">
 <meta name="twitter:card" content="summary">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/31/Python/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/02/Spider/"/>
 
 
 
 
 
-  <title>Python | Dark Knight</title>
+  <title>Spider | Dark Knight</title>
   
 
 
@@ -260,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/31/Python/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/Spider/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SJ_Sniper">
@@ -277,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python</h1>
+          <h1 class="post-title" itemprop="name headline">Spider</h1>
         
 
         <div class="post-meta">
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-31T20:21:16+08:00">
-                2020-03-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-02T19:55:18+08:00">
+                2020-04-02
               </time>
             
 
@@ -349,175 +349,16 @@
       
 
       
-        <p><strong><font size = 4>python备忘录</font></strong></p>
+        <p><strong><font size = 4>Python爬虫</font></strong></p>
 <a id="more"></a>
 <hr>
-<h2 id="备忘函数"><a href="#备忘函数" class="headerlink" title="备忘函数"></a>备忘函数</h2><table>
-<thead>
-<tr>
-<th align="left">math.floor</th>
-<th align="left">math.ceil</th>
-<th align="left">format</th>
-<th align="left">round(100/3,3)</th>
-<th align="left">度的转换</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">向下取整</td>
-<td align="left">向上取整</td>
-<td align="left">“{}”.format(cost)</td>
-<td align="left">保留三位有效数字即33.333</td>
-<td align="left">math.radians</td>
-</tr>
-</tbody></table>
-<p><strong>字符串类型  line = ‘ASDFGHJKL’</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">居中</th>
-<th align="left">计数</th>
-<th align="left">头大写其他小写</th>
-<th align="left">大小写转换</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">line.center(20)</td>
-<td align="left">line.count(‘z’)</td>
-<td align="left">line.capitalize()</td>
-<td align="left">line.swapcase()</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="left">字符串首尾判断</th>
-<th align="left">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">line.endswith(‘FE’)</td>
-<td align="left">是否以FE为结尾</td>
-</tr>
-<tr>
-<td align="left">line.startswith(‘ASDF’)</td>
-<td align="left">是否ASDF开头</td>
-</tr>
-<tr>
-<td align="left">line.find(‘A’，2)</td>
-<td align="left">从第2个字符开始找第1个’A’的位置，不存在的显示-1</td>
-</tr>
-<tr>
-<td align="left">line.index(‘S’)</td>
-<td align="left">找到第一个’S’位置，报错</td>
-</tr>
-</tbody></table>
-<p><strong>words和location为两个列表</strong></p>
-<p>words = [‘中’,’左’]<br/><br>location = [100,200]</p>
-<table>
-<thead>
-<tr>
-<th align="center">拉链函数</th>
-<th align="center">式子</th>
-<th align="center">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">zip</td>
-<td align="center">zip(words,location)</td>
-<td align="center">两个列表元素对应（需要等长）</td>
-</tr>
-</tbody></table>
-<p><strong>字典dict</strong><br/><br>students = [‘wong’,’li’,sun’,’zhao’,’qian’]<br/><br>money = dict.fromkeys(students,10)<br/></p>
-<blockquote>
-<p>（money = {‘li’:10,’wong’:10,’qian’:10,’sun’:10,’zhao’:10}）</p>
-</blockquote>
-<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><table>
-<thead>
-<tr>
-<th align="left">字典函数</th>
-<th align="left">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">dict.fromkeys(students,10)</td>
-<td align="left">每个values的keys为10，成为字典</td>
-</tr>
-<tr>
-<td align="left">money.get(‘wang’,100)</td>
-<td align="left">依然有返回值None，添加wang:100</td>
-</tr>
-</tbody></table>
-<pre><code>varibal = {
-    &apos;a&apos;:100
-    &apos;b&apos;:100
-    &apos;c&apos;:200
-}</code></pre><p>输入</p>
-<pre><code>varibal.items()
-→ dict_item([(&apos;a&apos;, 100), (&apos;b&apos;, 100), (&apos;c&apos;, 200)])
-
-[key for key, value in varibal.items() if value == 100]
-→ [&apos;a&apos;, &apos;b&apos;]</code></pre><h2 id="断言assert"><a href="#断言assert" class="headerlink" title="断言assert"></a>断言assert</h2><pre><code>age = 19
-assert age == 18,&apos;她竟然不是18岁&apos;</code></pre><p>(报错且输出’’里的报告反馈)</p>
-<p><strong>当循环的条件跟数量没有关系时，只能用while</strong><br>如：往空列表中添加随机数（  numbers.append(random.randint(1,10))  ）直到添加的数为9时终止</p>
-<p><strong>重点：只有一个元素（无逗号）的元组相当于此值</strong><br>如：b = (1)则type(b) = int ； b = (1,)则type(b) = tuple</p>
-<p><strong>生成器只能生成一次</strong></p>
-<pre><code>tuple_numbers = (number\*10 for number in random_numbers)</code></pre><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>位置参数是不可以交换位置的<br>函数也是对象(可以把函数赋给一个变量)<br>(函数可以当做另一个函数的返回值)</p>
-<pre><code>def test():
-    print(&apos;test&apos;)</code></pre><p>输入</p>
-<pre><code>c = test
-c.name
-→&apos;test&apos;</code></pre><p>定义函数</p>
-<pre><code>def test(func):
-    return func
-
-def func():
-    print(&apos;func run&apos;)</code></pre><p>输入</p>
-<pre><code>f = test(func)
-
-f.__name__
-→&apos;func&apos;
-
-f()
-→func run</code></pre><h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code>@decorator      //相当于decorator(test)
-def test():
-    return random.random()
-
-@decorator
-def test_two():
-    return random.random()*10
-
-def decorator(func):
-    def wrapper(\*args, \*\*kwargs):
-        # do something
-        return round(func(\*args, \*\*kwargs), 2)  //保留两位有效数字
-    return wrapper</code></pre><p>输入</p>
-<pre><code>test.__name__
-→&apos;wrapper&apos;
-
-test()
-→0.92</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>初始化函数、模板函数……</p>
-<pre><code>class Person:
-
-def __init__(self, name, age)
-    self._name = name
-    self._age = age
-
-@property
-def get_name(self):
-    return    self.name
-
-def rename(self, new_name):
-    self._name = new_name</code></pre><p>输入</p>
-<pre><code>p = Person(&apos;wong&apos;, 12)
-p.get_name()
-→&apos;wong&apos;</code></pre><p>加入@property装饰器在函数get_name() 前<br>输入p.get_name就行（不加括号）<br>下划线’_‘表明类内的属性不应该暴露给用户，是私有的</p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>class Student(Person):
-    def set_score(self, score)
-        self._score = score
-
-    def get_score(self):
-        return self._score</code></pre><p>Student继承了Person的属性</p>
-
+<p>信息存储在页面上，无法通过接口获得</p>
+<h2 id="Python库"><a href="#Python库" class="headerlink" title="Python库"></a>Python库</h2><ol>
+<li>requests 用来获取页面内容</li>
+<li>BeautifulSoup 分析页面</li>
+</ol>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install requests
+pip install bs4</code></pre>
       
     </div>
     
@@ -534,7 +375,7 @@ p.get_name()
       
         <div class="post-tags">
           
-            <a href="/tags/Pyhton%E7%BC%96%E7%A8%8B-Artificial-Intellienges/" rel="tag"># -Pyhton编程 -Artificial Intellienges</a>
+            <a href="/tags/Artificial-Intellienges-Python%E7%88%AC%E8%99%AB/" rel="tag"># -Artificial Intellienges -Python爬虫</a>
           
         </div>
       
@@ -547,8 +388,8 @@ p.get_name()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/03/AI/" rel="next" title="AI">
-                <i class="fa fa-chevron-left"></i> AI
+              <a href="/2020/04/02/MySQL/" rel="next" title="MySQL & Python">
+                <i class="fa fa-chevron-left"></i> MySQL & Python
               </a>
             
           </div>
@@ -556,10 +397,6 @@ p.get_name()
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/02/MySQL/" rel="prev" title="MySQL & Python">
-                MySQL & Python <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -695,7 +532,7 @@ p.get_name()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘函数"><span class="nav-number">1.</span> <span class="nav-text">备忘函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">2.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断言assert"><span class="nav-number">3.</span> <span class="nav-text">断言assert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器"><span class="nav-number">4.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">4.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法糖"><span class="nav-number">4.2.</span> <span class="nav-text">语法糖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">5.1.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python库"><span class="nav-number">1.</span> <span class="nav-text">Python库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li></ol></li></ol></div>
             
 
           </div>
