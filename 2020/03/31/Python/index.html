@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Dark Knight">
 <meta property="og:description" content="python备忘录">
 <meta property="article:published_time" content="2020-03-31T12:21:16.000Z">
-<meta property="article:modified_time" content="2020-04-02T04:53:24.244Z">
+<meta property="article:modified_time" content="2020-04-02T05:17:09.697Z">
 <meta property="article:author" content="SJ_Sniper">
 <meta property="article:tag" content="-Pyhton编程 -Artificial Intellienges">
 <meta name="twitter:card" content="summary">
@@ -448,102 +448,80 @@
 <td align="left">依然有返回值None，添加wang:100</td>
 </tr>
 </tbody></table>
-<blockquote>
-<p>varibal = {</p>
-<blockquote>
-<p>   ‘a’:100<br>   ‘b’:100<br>   ‘c’:200<br>}</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>varibal.items()<br>→ dict_item([(‘a’, 100), (‘b’, 100), (‘c’, 200)])</p>
-</blockquote>
-<blockquote>
-<p>[key for key, value in varibal.items() if value == 100]<br>→ [‘a’, ‘b’]</p>
-</blockquote>
-<h2 id="断言assert"><a href="#断言assert" class="headerlink" title="断言assert"></a>断言assert</h2><blockquote>
-<p>age = 19<br>assert age == 18,’她竟然不是18岁’<br>(报错且输出’’里的报告)</p>
-</blockquote>
+<pre><code>varibal = {
+    &apos;a&apos;:100
+    &apos;b&apos;:100
+    &apos;c&apos;:200
+}</code></pre><p>输入</p>
+<pre><code>varibal.items()
+→ dict_item([(&apos;a&apos;, 100), (&apos;b&apos;, 100), (&apos;c&apos;, 200)])
+
+[key for key, value in varibal.items() if value == 100]
+→ [&apos;a&apos;, &apos;b&apos;]</code></pre><h2 id="断言assert"><a href="#断言assert" class="headerlink" title="断言assert"></a>断言assert</h2><pre><code>age = 19
+assert age == 18,&apos;她竟然不是18岁&apos;</code></pre><p>(报错且输出’’里的报告)</p>
 <p><strong>当循环的条件跟数量没有关系时，只能用while</strong></p>
 <p>如：往空列表中添加随机数（  numbers.append(random.randint(1,10))  ）直到添加的数为9时终止</p>
 <p><strong>重点：只有一个元素（无逗号）的元组相当于此值</strong></p>
 <p>如：b = (1)则type(b) = int ； b = (1,)则type(b) = tuple</p>
 <p><strong>生成器只能生成一次</strong></p>
-<blockquote>
-<p>tuple_numbers = (number*10 for number in random_numbers)</p>
-</blockquote>
-<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>位置参数是不可以交换位置的<br/><br>函数也是对象(可以把函数赋给一个变量)<br/><br>(函数可以当做另一个函数的返回值)</p>
-<blockquote>
-<p>def test():</p>
-<blockquote>
-<p>   print(‘test’)</p>
-</blockquote>
-<p>c = test</p>
-</blockquote>
-<blockquote>
-<p>c.name<br>→’test’</p>
-</blockquote>
-<blockquote>
-<p>def test(func):</p>
-<blockquote>
-<p>   return func</p>
-</blockquote>
-<p>def func():</p>
-<blockquote>
-<p>   print(‘func run’)</p>
-</blockquote>
-<p>f = test(func)<br>f.<strong>name</strong><br>→’func’<br>f()<br>→func run</p>
-</blockquote>
-<h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><blockquote>
-<p>@decorator      //相当于decorator(test)<br>def test():<br>   return random.random()</p>
-<p>@decorator<br>def test_two():<br>   return random.random()*10</p>
-<p>def decorator(func):</p>
-<blockquote>
-<p>   def wrapper(<em>args, *</em>kwargs):</p>
-<blockquote>
-<pre><code># do something
-return round(func(*args, **kwargs), 2)  //保留两位有效数字</code></pre><p>   return wrapper</p>
-</blockquote>
-</blockquote>
-<p>test.<strong>name</strong><br>→’wrapper’</p>
-<p>test()<br>→0.92</p>
-</blockquote>
-<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>初始化函数、模板函数……</p>
-<blockquote>
-<p>class Person:</p>
-<blockquote>
-<p>   def <strong>init</strong>(self, name, age)</p>
-<blockquote>
-<pre><code>self._name = name
-self._age = age</code></pre></blockquote>
-</blockquote>
-<blockquote>
-<p>   @property<br>   def get_name(self):</p>
-<blockquote>
-<pre><code>return    self.name</code></pre></blockquote>
-</blockquote>
-<blockquote>
-<p>   def rename(self, new_name):</p>
-<blockquote>
-<pre><code>self._name = new_name</code></pre></blockquote>
-</blockquote>
-<p>p = Person(‘wong’, 12)<br>p.get_name()<br>→’wong’</p>
-</blockquote>
-<p>加入@property装饰器在函数get_name() 前</p>
+<pre><code>tuple_numbers = (number\*10 for number in random_numbers)</code></pre><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>位置参数是不可以交换位置的<br/><br>函数也是对象(可以把函数赋给一个变量)<br/><br>(函数可以当做另一个函数的返回值)</p>
+<pre><code>def test():
+    print(&apos;test&apos;)</code></pre><p>输入</p>
+<pre><code>c = test
+c.name
+→&apos;test&apos;</code></pre><p>定义函数</p>
+<pre><code>def test(func):
+    return func
+
+def func():
+    print(&apos;func run&apos;)</code></pre><p>输入</p>
+<pre><code>f = test(func)
+
+f.__name__
+→&apos;func&apos;
+
+f()
+→func run</code></pre><h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code>@decorator      //相当于decorator(test)
+def test():
+    return random.random()
+
+@decorator
+def test_two():
+    return random.random()*10
+
+def decorator(func):
+    def wrapper(\*args, \*\*kwargs):
+        # do something
+        return round(func(\*args, \*\*kwargs), 2)  //保留两位有效数字
+    return wrapper</code></pre><p>输入</p>
+<pre><code>test.__name__
+→&apos;wrapper&apos;
+
+test()
+→0.92</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>初始化函数、模板函数……</p>
+<pre><code>class Person:
+
+def __init__(self, name, age)
+    self._name = name
+    self._age = age
+
+@property
+def get_name(self):
+    return    self.name
+
+def rename(self, new_name):
+    self._name = new_name</code></pre><p>输入</p>
+<pre><code>p = Person(&apos;wong&apos;, 12)
+p.get_name()
+→&apos;wong&apos;</code></pre><p>加入@property装饰器在函数get_name() 前</p>
 <p>输入p.get_name就行（不加括号）</p>
 <p>下划线’_‘表明类内的属性不应该暴露给用户，是私有的</p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><blockquote>
-<p>class Student(Person):</p>
-<blockquote>
-<p>   def set_score(self, score)</p>
-<blockquote>
-<pre><code>self._score = score</code></pre></blockquote>
-</blockquote>
-<blockquote>
-<p>   def get_score(self):</p>
-<blockquote>
-<pre><code>return self._score</code></pre></blockquote>
-</blockquote>
-</blockquote>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>class Student(Person):
+    def set_score(self, score)
+        self._score = score
+
+    def get_score(self):
+        return self._score</code></pre><p>Student继承了Person的属性</p>
 
       
     </div>
