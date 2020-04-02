@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Dark Knight">
 <meta property="og:description" content="Python操作MySQL">
 <meta property="article:published_time" content="2020-04-02T03:49:58.000Z">
-<meta property="article:modified_time" content="2020-04-02T10:47:50.330Z">
+<meta property="article:modified_time" content="2020-04-02T11:48:17.599Z">
 <meta property="article:author" content="SJ_Sniper">
 <meta property="article:tag" content="-数据库">
 <meta name="twitter:card" content="summary">
@@ -411,8 +411,37 @@ values(&apos;1&apos;, &apos;高一三班&apos;);</code></pre><h4 id="修改数�
 where &apos;name&apos; = &apos;高一三班&apos;;</code></pre><h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code>delete from &apos;class&apos;;
 where id = &apos;6&apos;;</code></pre><hr>
 <hr>
-<h2 id="第三章-Python操作数据库"><a href="#第三章-Python操作数据库" class="headerlink" title="第三章 Python操作数据库"></a>第三章 Python操作数据库</h2><p>需要MySQLdb库</p>
+<h2 id="第三章-Python操作数据库"><a href="#第三章-Python操作数据库" class="headerlink" title="第三章 Python操作数据库"></a>第三章 Python操作数据库</h2><h3 id="安装MySQLdb库"><a href="#安装MySQLdb库" class="headerlink" title="安装MySQLdb库"></a>安装MySQLdb库</h3><pre><code>import MySQLdb
 
+DATABASE = {                        // 多个数据库需要用列表&apos;[ ]&apos;
+    &apos;host&apos;: &apos;12.0.0.1&apos;,             // 如果是远程数据库，此处为远程服务器的ip地址
+    &apos;database&apos;: &apos;Examination&apos;,
+    &apos;user&apos;: &apos;root&apos;,
+    &apos;password&apos;: &apos;wangwei&apos;,
+    &apos;charset&apos;: &apos;utf8mb4&apos;            // 防止后面结果results中文处出现问号
+}
+
+db = MySQLdb.connect(**DATABASE)    //数据收集</code></pre><h3 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h3><pre><code>cursor1 = db.cursor()</code></pre><p>查询操作</p>
+<pre><code>sql = &quot;select * from class where id &lt;= 20 limit 4&quot;        
+//SQL查询语句id小于20的，先显示前4个
+cursor.execute(sql)                //利用游标执行SQL语句
+results = cuesor.fetchall()        //获得结果
+for row in results:
+    print(row)</code></pre><p>插入操作</p>
+<pre><code>sql = &quot;insert into &apos;class&apos;(&apos;name&apos;) values(&apos;高一四班&apos;);&quot;  
+cursor.execute(sql)
+// cursor.execute(sql)  //可以执行多次，相应添加多个一样的
+db.commit()    //提交到数据库</code></pre><p>更新操作</p>
+<pre><code>sql = &quot;update &apos;class&apos; set &apos;name = &apos;高十四班&apos; where &apos;id&apos; = 4;&quot;
+cursor.execute(sql)
+db.commit()</code></pre><p>删除操作    </p>
+<pre><code>sql = &quot;delete from &apos;class&apos; where &apos;name&apos; = &apos;高一五班&apos;;&quot;
+cursor.execute(sql)
+db.commit()</code></pre><h3 id="捕捉异常"><a href="#捕捉异常" class="headerlink" title="捕捉异常"></a>捕捉异常</h3><p>assert （断言函数）与此相似</p>
+<pre><code>try:
+    do something
+except Exception as e:    //Exception异常类
+    print(e)</code></pre>
       
     </div>
     
@@ -586,7 +615,7 @@ where id = &apos;6&apos;;</code></pre><hr>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-json"><span class="nav-number">1.</span> <span class="nav-text">第一章 json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-MySQL数据库基本操作"><span class="nav-number">2.</span> <span class="nav-text">第二章 MySQL数据库基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接登录数据库"><span class="nav-number">2.1.</span> <span class="nav-text">链接登录数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行操作数据库"><span class="nav-number">2.2.</span> <span class="nav-text">命令行操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据"><span class="nav-number">2.2.3.</span> <span class="nav-text">删除数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-Python操作数据库"><span class="nav-number">3.</span> <span class="nav-text">第三章 Python操作数据库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-json"><span class="nav-number">1.</span> <span class="nav-text">第一章 json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-MySQL数据库基本操作"><span class="nav-number">2.</span> <span class="nav-text">第二章 MySQL数据库基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接登录数据库"><span class="nav-number">2.1.</span> <span class="nav-text">链接登录数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行操作数据库"><span class="nav-number">2.2.</span> <span class="nav-text">命令行操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入数据"><span class="nav-number">2.2.1.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据"><span class="nav-number">2.2.3.</span> <span class="nav-text">删除数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-Python操作数据库"><span class="nav-number">3.</span> <span class="nav-text">第三章 Python操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MySQLdb库"><span class="nav-number">3.1.</span> <span class="nav-text">安装MySQLdb库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#游标"><span class="nav-number">3.2.</span> <span class="nav-text">游标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#捕捉异常"><span class="nav-number">3.3.</span> <span class="nav-text">捕捉异常</span></a></li></ol></li></ol></div>
             
 
           </div>
