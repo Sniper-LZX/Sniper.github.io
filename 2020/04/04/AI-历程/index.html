@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Dark Knight">
 <meta property="og:description" content="人工智能-历程">
 <meta property="article:published_time" content="2020-04-04T03:08:24.000Z">
-<meta property="article:modified_time" content="2020-04-04T13:46:45.352Z">
+<meta property="article:modified_time" content="2020-04-04T14:26:53.164Z">
 <meta property="article:author" content="SJ_Sniper">
 <meta property="article:tag" content="-Artificial Intellienges -科学计算 -Python爬虫">
 <meta name="twitter:card" content="summary">
@@ -489,6 +489,7 @@ df = pd.read_csv(csv_file_path)        // 读取csv后缀文件</code></pre><p>�
 <th align="left">索引</th>
 <th align="left">取第0项记录</th>
 <th align="left">前两行</th>
+<th align="left">后两行</th>
 <th align="left">规范表格</th>
 </tr>
 </thead>
@@ -497,19 +498,48 @@ df = pd.read_csv(csv_file_path)        // 读取csv后缀文件</code></pre><p>�
 <td align="left">df.index</td>
 <td align="left">df.loc[0]</td>
 <td align="left">df.head(2)</td>
+<td align="left">df.tail(2)</td>
 <td align="left">pd.DataFrame(data)</td>
 </tr>
 </tbody></table>
-<hr>
 <h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><p><strong>数学成绩大于80</strong></p>
-<pre><code>df[(df.数学 &gt; 80) &amp; (df.语文 &gt; 70) &amp; (df.英语 &gt; 80)]</code></pre><hr>
-<h2 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h2><p><strong>先按照数学排序，如果数学相等按照语文排序</strong>    </p>
-<pre><code>df.sort_values([&apos;数学&apos;，&apos;语文&apos;])</code></pre><hr>
-<h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><pre><code>df.loc[2]    //按照索引去定位</code></pre><p><strong>索引</strong></p>
+<pre><code>df[(df.数学 &gt; 80) &amp; (df.语文 &gt; 70) &amp; (df.英语 &gt; 80)]</code></pre><h2 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h2><p><strong>先按照数学排序，如果数学相等按照语文排序</strong>    </p>
+<pre><code>df.sort_values([&apos;数学&apos;，&apos;语文&apos;])</code></pre><h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><pre><code>df.loc[2]    // 按照索引去定位</code></pre><p><strong>索引</strong></p>
 <pre><code>df = pd.DataFrame(data, index=[&apos;one&apos;, &apos;two&apos;])    
-//按照data建立表格，可指定索引标签（这个标签下无法使用loc[1]之类的数字索引）</code></pre><p><strong>忽略索引标签的索引</strong></p>
-<pre><code>df.iloc[0]    //从0开始的实实在在的行数索引
-df.ix[4]    //合并loc和iloc，有数字则数字索引，没有则行数索引</code></pre>
+// 按照data建立表格，可指定索引标签（这个标签下无法使用loc[1]之类的数字索引）</code></pre><p><strong>忽略索引标签的索引</strong></p>
+<pre><code>df.iloc[0]    // 从0开始的实实在在的行数索引
+df.ix[4]    // 合并loc和iloc，有数字则数字索引，没有则行数索引</code></pre><p><strong>切片式索引</strong></p>
+<pre><code>df.loc[:2]
+df.ix[:2]
+df[:2]    // 可以访问多行数据，但是df[2]是错误的</code></pre><p><strong>dataframe中的数组数据</strong></p>
+<pre><code>df.values                // 转换为数组数据
+df.数学                     // 等价于df[&apos;数学&apos;]
+df.数学.values
+df.数学.value_counts()    // 统计多少人得了多少分
+df[[&apos;数学&apos;, &apos;语文&apos;]].head()        // 提取多列将会成为一个子表格，可以使用head函数</code></pre><h2 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h2><pre><code>def func(score):
+    if score &gt;= 80:
+        return &quot;优秀&quot;
+    else if score &gt;= 70:
+        return &quot;良&quot;
+    else if score &gt;= 60:
+        return &quot;及格&quot;
+    else:
+        return &quot;不及格&quot;
+
+df[&apos;数学分类&apos;] = df.数学.map(func)    //新增一列按照func函数填值
+map(func, data)</code></pre><hr>
+<p>扩展：<strong>lambda函数（匿名函数）</strong></p>
+<pre><code>def func(number):
+    return number+10
+# 等价于
+func = lambda number: number+10    </code></pre><hr>
+<pre><code>df.applymap(lambda x: str(x) + &apos;-&apos;)        // 对所有的列进行操作如尾部加‘-’
+
+// 根据多列来生成新的一列
+df[&apos;new_score&apos;] = df.apply(lambda x: x.数学 + x.语文, axis = 1)     </code></pre><blockquote>
+<p>注：pandas 中的 dataframe 的操作，很大一部分和 numpy 中的二维数组的操作是近似的</p>
+</blockquote>
+
       
     </div>
     
@@ -683,7 +713,7 @@ df.ix[4]    //合并loc和iloc，有数字则数字索引，没有则行数索�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number">1.</span> <span class="nav-text">爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python库"><span class="nav-number">1.1.</span> <span class="nav-text">Python库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个实例"><span class="nav-number">1.3.</span> <span class="nav-text">一个实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NumPy基本操作"><span class="nav-number">2.</span> <span class="nav-text">NumPy基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random"><span class="nav-number">2.2.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问数组元素"><span class="nav-number">2.3.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组属性"><span class="nav-number">2.4.</span> <span class="nav-text">数组属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组运算"><span class="nav-number">2.5.</span> <span class="nav-text">数组运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计类型"><span class="nav-number">2.6.</span> <span class="nav-text">统计类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notebook使用"><span class="nav-number">2.7.</span> <span class="nav-text">notebook使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">2.8.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形"><span class="nav-number">2.9.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">2.10.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">2.11.</span> <span class="nav-text">拼接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas基本操作"><span class="nav-number">3.</span> <span class="nav-text">Pandas基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#csv和DataFrame"><span class="nav-number">3.1.</span> <span class="nav-text">csv和DataFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#筛选"><span class="nav-number">3.2.</span> <span class="nav-text">筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序-1"><span class="nav-number">3.3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问"><span class="nav-number">3.4.</span> <span class="nav-text">访问</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number">1.</span> <span class="nav-text">爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python库"><span class="nav-number">1.1.</span> <span class="nav-text">Python库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个实例"><span class="nav-number">1.3.</span> <span class="nav-text">一个实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NumPy基本操作"><span class="nav-number">2.</span> <span class="nav-text">NumPy基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random"><span class="nav-number">2.2.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问数组元素"><span class="nav-number">2.3.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组属性"><span class="nav-number">2.4.</span> <span class="nav-text">数组属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组运算"><span class="nav-number">2.5.</span> <span class="nav-text">数组运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计类型"><span class="nav-number">2.6.</span> <span class="nav-text">统计类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notebook使用"><span class="nav-number">2.7.</span> <span class="nav-text">notebook使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">2.8.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形"><span class="nav-number">2.9.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">2.10.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">2.11.</span> <span class="nav-text">拼接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas基本操作"><span class="nav-number">3.</span> <span class="nav-text">Pandas基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#csv和DataFrame"><span class="nav-number">3.1.</span> <span class="nav-text">csv和DataFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#筛选"><span class="nav-number">3.2.</span> <span class="nav-text">筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序-1"><span class="nav-number">3.3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问"><span class="nav-number">3.4.</span> <span class="nav-text">访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map函数"><span class="nav-number">3.5.</span> <span class="nav-text">map函数</span></a></li></ol></li></ol></div>
             
 
           </div>
