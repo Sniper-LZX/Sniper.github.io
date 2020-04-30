@@ -350,135 +350,161 @@
 
       
         <p><strong><font size = 4>python备忘录</font></strong></p>
-<a id="more"></a>
-<hr>
-<h2 id="备忘函数"><a href="#备忘函数" class="headerlink" title="备忘函数"></a>备忘函数</h2><table>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="备忘函数"><a href="#备忘函数" class="headerlink" title="备忘函数"></a>备忘函数</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">math.floor</th>
-<th align="left">math.ceil</th>
-<th align="left">format</th>
-<th align="left">round(100/3,3)</th>
-<th align="left">度的转换</th>
+<th style="text-align:left">math.floor</th>
+<th style="text-align:left">math.ceil</th>
+<th style="text-align:left">format</th>
+<th style="text-align:left">round(100/3,3)</th>
+<th style="text-align:left">度的转换</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">向下取整</td>
-<td align="left">向上取整</td>
-<td align="left">“{}”.format(cost)</td>
-<td align="left">保留三位有效数字即33.333</td>
-<td align="left">math.radians</td>
+<tbody>
+<tr>
+<td style="text-align:left">向下取整</td>
+<td style="text-align:left">向上取整</td>
+<td style="text-align:left">“{}”.format(cost)</td>
+<td style="text-align:left">保留三位有效数字即33.333</td>
+<td style="text-align:left">math.radians</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>字符串类型  line = ‘ASDFGHJKL’</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">居中</th>
-<th align="left">计数</th>
-<th align="left">头大写其他小写</th>
-<th align="left">大小写转换</th>
+<th style="text-align:left">居中</th>
+<th style="text-align:left">计数</th>
+<th style="text-align:left">头大写其他小写</th>
+<th style="text-align:left">大小写转换</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">line.center(20)</td>
-<td align="left">line.count(‘z’)</td>
-<td align="left">line.capitalize()</td>
-<td align="left">line.swapcase()</td>
+<tbody>
+<tr>
+<td style="text-align:left">line.center(20)</td>
+<td style="text-align:left">line.count(‘z’)</td>
+<td style="text-align:left">line.capitalize()</td>
+<td style="text-align:left">line.swapcase()</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">字符串首尾判断</th>
-<th align="left">功能</th>
+<th style="text-align:left">字符串首尾判断</th>
+<th style="text-align:left">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">line.endswith(‘FE’)</td>
-<td align="left">是否以FE为结尾</td>
+<tbody>
+<tr>
+<td style="text-align:left">line.endswith(‘FE’)</td>
+<td style="text-align:left">是否以FE为结尾</td>
 </tr>
 <tr>
-<td align="left">line.startswith(‘ASDF’)</td>
-<td align="left">是否ASDF开头</td>
+<td style="text-align:left">line.startswith(‘ASDF’)</td>
+<td style="text-align:left">是否ASDF开头</td>
 </tr>
 <tr>
-<td align="left">line.find(‘A’，2)</td>
-<td align="left">从第2个字符开始找第1个’A’的位置，不存在的显示-1</td>
+<td style="text-align:left">line.find(‘A’，2)</td>
+<td style="text-align:left">从第2个字符开始找第1个’A’的位置，不存在的显示-1</td>
 </tr>
 <tr>
-<td align="left">line.index(‘S’)</td>
-<td align="left">找到第一个’S’位置，报错</td>
+<td style="text-align:left">line.index(‘S’)</td>
+<td style="text-align:left">找到第一个’S’位置，报错</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>words和location为两个列表</strong></p>
 <p>words = [‘中’,’左’]<br/><br>location = [100,200]</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">拉链函数</th>
-<th align="center">式子</th>
-<th align="center">功能</th>
+<th style="text-align:center">拉链函数</th>
+<th style="text-align:center">式子</th>
+<th style="text-align:center">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">zip</td>
-<td align="center">zip(words,location)</td>
-<td align="center">两个列表元素对应（需要等长）</td>
+<tbody>
+<tr>
+<td style="text-align:center">zip</td>
+<td style="text-align:center">zip(words,location)</td>
+<td style="text-align:center">两个列表元素对应（需要等长）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>字典dict</strong><br/><br>students = [‘wong’,’li’,sun’,’zhao’,’qian’]<br/><br>money = dict.fromkeys(students,10)<br/></p>
 <blockquote>
 <p>（money = {‘li’:10,’wong’:10,’qian’:10,’sun’:10,’zhao’:10}）</p>
 </blockquote>
-<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><table>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">字典函数</th>
-<th align="left">功能</th>
+<th style="text-align:left">字典函数</th>
+<th style="text-align:left">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">dict.fromkeys(students,10)</td>
-<td align="left">每个values的keys为10，成为字典</td>
+<tbody>
+<tr>
+<td style="text-align:left">dict.fromkeys(students,10)</td>
+<td style="text-align:left">每个values的keys为10，成为字典</td>
 </tr>
 <tr>
-<td align="left">money.get(‘wang’,100)</td>
-<td align="left">依然有返回值None，添加wang:100</td>
+<td style="text-align:left">money.get(‘wang’,100)</td>
+<td style="text-align:left">依然有返回值None，添加wang:100</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <pre><code>varibal = {
-    &apos;a&apos;:100
-    &apos;b&apos;:100
-    &apos;c&apos;:200
-}</code></pre><p>输入</p>
+    &#39;a&#39;:100
+    &#39;b&#39;:100
+    &#39;c&#39;:200
+}
+</code></pre><p>输入</p>
 <pre><code>varibal.items()
-→ dict_item([(&apos;a&apos;, 100), (&apos;b&apos;, 100), (&apos;c&apos;, 200)])
+→ dict_item([(&#39;a&#39;, 100), (&#39;b&#39;, 100), (&#39;c&#39;, 200)])
 
 [key for key, value in varibal.items() if value == 100]
-→ [&apos;a&apos;, &apos;b&apos;]</code></pre><h2 id="断言assert"><a href="#断言assert" class="headerlink" title="断言assert"></a>断言assert</h2><pre><code>age = 19
-assert age == 18,&apos;她竟然不是18岁&apos;</code></pre><p>(报错且输出’’里的报告反馈)</p>
+→ [&#39;a&#39;, &#39;b&#39;]
+</code></pre><h2 id="断言assert"><a href="#断言assert" class="headerlink" title="断言assert"></a>断言assert</h2><pre><code>age = 19
+assert age == 18,&#39;她竟然不是18岁&#39;
+</code></pre><p>(报错且输出’’里的报告反馈)</p>
 <p><strong>当循环的条件跟数量没有关系时，只能用while</strong><br>如：往空列表中添加随机数（  numbers.append(random.randint(1,10))  ）直到添加的数为9时终止</p>
 <p><strong>重点：只有一个元素（无逗号）的元组相当于此值</strong><br>如：b = (1)则type(b) = int ； b = (1,)则type(b) = tuple</p>
 <p><strong>生成器只能生成一次</strong></p>
-<pre><code>tuple_numbers = (number\*10 for number in random_numbers)</code></pre><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>位置参数是不可以交换位置的<br>函数也是对象(可以把函数赋给一个变量)<br>(函数可以当做另一个函数的返回值)</p>
+<pre><code>tuple_numbers = (number\*10 for number in random_numbers)
+</code></pre><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>位置参数是不可以交换位置的<br>函数也是对象(可以把函数赋给一个变量)<br>(函数可以当做另一个函数的返回值)</p>
 <pre><code>def test():
-    print(&apos;test&apos;)</code></pre><p>输入</p>
+    print(&#39;test&#39;)
+</code></pre><p>输入</p>
 <pre><code>c = test
 c.name
-→&apos;test&apos;</code></pre><p>定义函数</p>
+→&#39;test&#39;
+</code></pre><p>定义函数</p>
 <pre><code>def test(func):
     return func
 
 def func():
-    print(&apos;func run&apos;)</code></pre><p>输入</p>
+    print(&#39;func run&#39;)
+</code></pre><p>输入</p>
 <pre><code>f = test(func)
 
 f.__name__
-→&apos;func&apos;
+→&#39;func&#39;
 
 f()
-→func run</code></pre><h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code>@decorator      //相当于decorator(test)
+→func run
+</code></pre><h3 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h3><pre><code>@decorator      //相当于decorator(test)
 def test():
     return random.random()
 
@@ -490,12 +516,14 @@ def decorator(func):
     def wrapper(\*args, \*\*kwargs):
         # do something
         return round(func(\*args, \*\*kwargs), 2)  //保留两位有效数字
-    return wrapper</code></pre><p>输入</p>
+    return wrapper
+</code></pre><p>输入</p>
 <pre><code>test.__name__
-→&apos;wrapper&apos;
+→&#39;wrapper&#39;
 
 test()
-→0.92</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>初始化函数、模板函数……</p>
+→0.92
+</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>初始化函数、模板函数……</p>
 <pre><code>class Person:
 
 def __init__(self, name, age)
@@ -507,16 +535,19 @@ def get_name(self):
     return    self.name
 
 def rename(self, new_name):
-    self._name = new_name</code></pre><p>输入</p>
-<pre><code>p = Person(&apos;wong&apos;, 12)
+    self._name = new_name
+</code></pre><p>输入</p>
+<pre><code>p = Person(&#39;wong&#39;, 12)
 p.get_name()
-→&apos;wong&apos;</code></pre><p>加入@property装饰器在函数get_name() 前<br>输入p.get_name就行（不加括号）<br>下划线’_‘表明类内的属性不应该暴露给用户，是私有的</p>
+→&#39;wong&#39;
+</code></pre><p>加入@property装饰器在函数get_name() 前<br>输入p.get_name就行（不加括号）<br>下划线’_‘表明类内的属性不应该暴露给用户，是私有的</p>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>class Student(Person):
     def set_score(self, score)
         self._score = score
 
     def get_score(self):
-        return self._score</code></pre><p>Student继承了Person的属性</p>
+        return self._score
+</code></pre><p>Student继承了Person的属性</p>
 
       
     </div>
@@ -695,7 +726,7 @@ p.get_name()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘函数"><span class="nav-number">1.</span> <span class="nav-text">备忘函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">2.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断言assert"><span class="nav-number">3.</span> <span class="nav-text">断言assert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器"><span class="nav-number">4.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">4.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法糖"><span class="nav-number">4.2.</span> <span class="nav-text">语法糖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">5.1.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘函数"><span class="nav-number">2.</span> <span class="nav-text">备忘函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">3.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#断言assert"><span class="nav-number">4.</span> <span class="nav-text">断言assert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器"><span class="nav-number">5.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">5.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法糖"><span class="nav-number">5.2.</span> <span class="nav-text">语法糖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">6.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">6.1.</span> <span class="nav-text">继承</span></a></li></ol></li></ol></div>
             
 
           </div>

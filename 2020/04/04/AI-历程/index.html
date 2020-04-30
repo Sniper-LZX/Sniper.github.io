@@ -350,9 +350,7 @@
 
       
         <p><strong><font size = 4>人工智能-历程</font></strong></p>
-<a id="more"></a>
-<hr>
-<center><strong><font size = 6>第一部分：SPIDER</font></strong></center>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><center><strong><font size = 6>第一部分：SPIDER</font></strong></center>
 
 <h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><p>信息存储在页面上，无法通过接口获得</p>
 <h2 id="Python库"><a href="#Python库" class="headerlink" title="Python库"></a>Python库</h2><ol>
@@ -360,21 +358,23 @@
 <li>BeautifulSoup 分析页面</li>
 </ol>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>pip install requests
-pip install bs4</code></pre><h2 id="一个实例"><a href="#一个实例" class="headerlink" title="一个实例"></a>一个实例</h2><pre><code>// 封装成函数，爬取网页，返回链接列表
+pip install bs4
+</code></pre><h2 id="一个实例"><a href="#一个实例" class="headerlink" title="一个实例"></a>一个实例</h2><pre><code>// 封装成函数，爬取网页，返回链接列表
 def get_links(url)
     response = requests.get(url)                    // 如：获得返回&lt;Response [200]&gt;为成功
     response.text                                   // 页面内容
-    soup = BeautifulSoup(response.text, &apos;lxml&apos;)     // 解析格式lxml用于可以运行在不同的环境中
+    soup = BeautifulSoup(response.text, &#39;lxml&#39;)     // 解析格式lxml用于可以运行在不同的环境中
 
-    links_div = soup.find_all(&apos;div&apos;, class_ = &quot;pic-panel&quot;)    
+    links_div = soup.find_all(&#39;div&#39;, class_ = &quot;pic-panel&quot;)    
     // 寻找指定标签，class是Python中的关键字，所以后面加下划线
 
-    links = [link_div.a.get(&apos;href&apos;) for link in link_div]    // 每一项都为列表里的一个元素
-    /* link_div.a.get(&apos;href&apos;)            // 获得div中a标签的href属性 */
+    links = [link_div.a.get(&#39;href&#39;) for link in link_div]    // 每一项都为列表里的一个元素
+    /* link_div.a.get(&#39;href&#39;)            // 获得div中a标签的href属性 */
     return links
 
 url = &quot;http://bj.lianjia.com/zufang/&quot;        // 举例网站：链家网
-get_links(url)</code></pre><hr>
+get_links(url)
+</code></pre><hr>
 <center><strong><font size = 6>第二部分：NumPy</font></strong></center>
 
 <h1 id="NumPy基本操作"><a href="#NumPy基本操作" class="headerlink" title="NumPy基本操作"></a>NumPy基本操作</h1><hr>
@@ -387,29 +387,35 @@ get_links(url)</code></pre><hr>
 <hr>
 <p>扩展：列表可以存储任意类型的数据，数组只能存储一种类型的数据</p>
 <pre><code>import array
-a = array.array(&apos;i&apos;, range(10))    // 数据类型为int
+a = array.array(&#39;i&#39;, range(10))    // 数据类型为int
 // 假如执行
-a[1] = &apos;s&apos;        // 试图修改数据为字符型
-// 会报错无法执行</code></pre><hr>
+a[1] = &#39;s&#39;        // 试图修改数据为字符型
+// 会报错无法执行
+</code></pre><hr>
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>现在我们所使用的数组基本上封装在NumPy中</p>
 <pre><code>import numpy as np
 
 a1 = np.zeros(10, dtype = int)    //生成数组，默认类型float
 a2 = np.zeros((4,4), dtype = int)    //生成4×4数组
-np.array()    //与array()相比支持多维数组</code></pre><table>
+np.array()    //与array()相比支持多维数组
+</code></pre><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">np.ones((a,b), dtype)</th>
-<th align="left">np.full((a,b), data)</th>
-<th align="left">np.zeros_like(a)，np.ones_like(a)，np.full_like(a, data)</th>
+<th style="text-align:left">np.ones((a,b), dtype)</th>
+<th style="text-align:left">np.full((a,b), data)</th>
+<th style="text-align:left">np.zeros_like(a)，np.ones_like(a)，np.full_like(a, data)</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">a×b数组, dtype指定类型</td>
-<td align="left">a×b数组，data处填写数字</td>
-<td align="left">创建与a相同行列的数组</td>
+<tbody>
+<tr>
+<td style="text-align:left">a×b数组, dtype指定类型</td>
+<td style="text-align:left">a×b数组，data处填写数字</td>
+<td style="text-align:left">创建与a相同行列的数组</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>注：未来版本中，1是int64类型的，可以指定一个dtpye，可以用float类型<br>（如：np.full((2,10),1,dtype=float）</p>
 <h2 id="random"><a href="#random" class="headerlink" title="random"></a>random</h2><p>1.随机数</p>
 <pre><code>np.random.random((3,3))        // 随机数的3×3数组-与random.random的区别
@@ -417,15 +423,19 @@ np.random.randn(10)            // 从标准正态分布中返回10个随机数
 np.random.rand(10, 4).cumsum(0)            // 随机生成10×4二维随机数，再列求和
 
 # 形成随机数时经常会用到
-np.random.randint(0,10,(5,5))    // 0-10随机5×5</code></pre><p>2.范围取值</p>
+np.random.randint(0,10,(5,5))    // 0-10随机5×5
+</code></pre><p>2.范围取值</p>
 <pre><code>np.arange(0,10,2)    // 第三个是步长
 np.linspace(0,3,10)    // 第三个是随机取的个数（这里是10个）
-np.eye（10）            // 10×10的单位矩阵</code></pre><hr>
+np.eye（10）            // 10×10的单位矩阵
+</code></pre><hr>
 <p>扩展：对应的数据类型有取值范围可以自行搜索查询<br>如：int32-Integer（-2147483648 to 214748364）</p>
 <hr>
 <h2 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h2><pre><code>var[a][b] // 等价var[a, b]
 var[:2, :1]  //数组切片
-// 注：var[:2][:1]不一样，意为取前两行成为一个数组，再取这个数组的前一行</code></pre><h2 id="数组属性"><a href="#数组属性" class="headerlink" title="数组属性"></a>数组属性</h2><table>
+// 注：var[:2][:1]不一样，意为取前两行成为一个数组，再取这个数组的前一行
+</code></pre><h2 id="数组属性"><a href="#数组属性" class="headerlink" title="数组属性"></a>数组属性</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>维度</th>
@@ -436,7 +446,8 @@ var[:2, :1]  //数组切片
 <th>总共字节数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>a.ndim</td>
 <td>a.shape</td>
 <td>a.size</td>
@@ -444,8 +455,11 @@ var[:2, :1]  //数组切片
 <td>a.itemsize</td>
 <td>a.nbytes</td>
 </tr>
-</tbody></table>
-<h2 id="数组运算"><a href="#数组运算" class="headerlink" title="数组运算"></a>数组运算</h2><pre><code>print(a + 10)    // 每个元素加10，-、*同理，多维数组也一样</code></pre><ol>
+</tbody>
+</table>
+</div>
+<h2 id="数组运算"><a href="#数组运算" class="headerlink" title="数组运算"></a>数组运算</h2><pre><code>print(a + 10)    // 每个元素加10，-、*同理，多维数组也一样
+</code></pre><ol>
 <li>操作符和np的函数相对应（自查）<br>如：”+” 对应于 np.add</li>
 <li>还可以用数学函数<br>如：np.pi == π，np.sin(np.pi)【括号内可以换成带有π的多维数组】</li>
 </ol>
@@ -462,12 +476,15 @@ var[:2, :1]  //数组切片
 <li>a &gt; 3<br>会得到多维布尔类型的数组</li>
 <li>np.all(a&gt;-1)<br>a内所有数值全部为True才会返回True</li>
 </ul>
-<h2 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h2><pre><code>np.reshape(c,d)    // a × b转换c × d数组</code></pre><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><pre><code>np.sort(a)    // 每一行从小到大排，不改变a
-a.sort(axis)    // 改变a，axis等于0时行列都排序，axis等于1时只行排序，列顺序不变</code></pre><h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><pre><code>np.concatenate([a,b],axis)
+<h2 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h2><pre><code>np.reshape(c,d)    // a × b转换c × d数组
+</code></pre><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><pre><code>np.sort(a)    // 每一行从小到大排，不改变a
+a.sort(axis)    // 改变a，axis等于0时行列都排序，axis等于1时只行排序，列顺序不变
+</code></pre><h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><pre><code>np.concatenate([a,b],axis)
 /*
     axis = 0 按行不变竖着拼接
     axis = 1 按列不变横着拼接
-*/</code></pre><hr>
+*/
+</code></pre><hr>
 <center><strong><font size = 8>第三部分：Pandas</font></strong></center>
 
 <h1 id="Pandas基本操作"><a href="#Pandas基本操作" class="headerlink" title="Pandas基本操作"></a>Pandas基本操作</h1><hr>
@@ -482,44 +499,57 @@ a.sort(axis)    // 改变a，axis等于0时行列都排序，axis等于1时只�
 <p>先在file.csv文件中写入：</p>
 <pre><code>id,name,class,score
 1,li,高一一班,80
-2,song,高一二班,69    </code></pre><hr>
+2,song,高一二班,69    
+</code></pre><hr>
 <h2 id="csv和DataFrame"><a href="#csv和DataFrame" class="headerlink" title="csv和DataFrame"></a>csv和DataFrame</h2><pre><code>import pandas as pd
 df = pd.read_csv(csv_file_path)        // 读取csv后缀文件
 df = pd.DataFrame()         // 规范表格，有许多参数
-df = pd.DataFrame(columns = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;])     // 各列列名</code></pre><p>此时，df的类型为pandas.core.frame.DataFrame</p>
+df = pd.DataFrame(columns = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])     // 各列列名
+</code></pre><p>此时，df的类型为pandas.core.frame.DataFrame</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">获取所有列名</th>
-<th align="left">索引</th>
-<th align="left">取第0项记录</th>
-<th align="left">前两行</th>
-<th align="left">后两行</th>
+<th style="text-align:left">获取所有列名</th>
+<th style="text-align:left">索引</th>
+<th style="text-align:left">取第0项记录</th>
+<th style="text-align:left">前两行</th>
+<th style="text-align:left">后两行</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">df.columns</td>
-<td align="left">df.index</td>
-<td align="left">df.loc[0]</td>
-<td align="left">df.head(2)</td>
-<td align="left">df.tail(2)</td>
+<tbody>
+<tr>
+<td style="text-align:left">df.columns</td>
+<td style="text-align:left">df.index</td>
+<td style="text-align:left">df.loc[0]</td>
+<td style="text-align:left">df.head(2)</td>
+<td style="text-align:left">df.tail(2)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><p><strong>数学成绩大于80</strong></p>
-<pre><code>df[(df.数学 &gt; 80) &amp; (df.语文 &gt; 70) &amp; (df.英语 &gt; 80)]</code></pre><h2 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h2><p><strong>先按照数学排序，如果数学相等按照语文排序</strong>    </p>
-<pre><code>df.sort_values([&apos;数学&apos;，&apos;语文&apos;])</code></pre><h2 id="访问索引"><a href="#访问索引" class="headerlink" title="访问索引"></a>访问索引</h2><pre><code>df.loc[2]    // 按照索引去定位</code></pre><p><strong>索引</strong></p>
-<pre><code>df = pd.DataFrame(data, index=[&apos;one&apos;, &apos;two&apos;])    
-// 按照data建立表格，可指定索引标签（这个标签下无法使用loc[1]之类的数字索引）</code></pre><p><strong>忽略索引标签的索引</strong></p>
+<pre><code>df[(df.数学 &gt; 80) &amp; (df.语文 &gt; 70) &amp; (df.英语 &gt; 80)]
+</code></pre><h2 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h2><p><strong>先按照数学排序，如果数学相等按照语文排序</strong>    </p>
+<pre><code>df.sort_values([&#39;数学&#39;，&#39;语文&#39;])
+</code></pre><h2 id="访问索引"><a href="#访问索引" class="headerlink" title="访问索引"></a>访问索引</h2><pre><code>df.loc[2]    // 按照索引去定位
+</code></pre><p><strong>索引</strong></p>
+<pre><code>df = pd.DataFrame(data, index=[&#39;one&#39;, &#39;two&#39;])    
+// 按照data建立表格，可指定索引标签（这个标签下无法使用loc[1]之类的数字索引）
+</code></pre><p><strong>忽略索引标签的索引</strong></p>
 <pre><code>df.iloc[0]    // 从0开始的实实在在的行数索引
-df.ix[4]    // 合并loc和iloc，有数字则数字索引，没有则行数索引</code></pre><p><strong>切片式索引</strong></p>
+df.ix[4]    // 合并loc和iloc，有数字则数字索引，没有则行数索引
+</code></pre><p><strong>切片式索引</strong></p>
 <pre><code>df.loc[:2]
 df.ix[:2]
-df[:2]    // 可以访问多行数据，但是df[2]是错误的</code></pre><p><strong>dataframe中的数组数据</strong></p>
+df[:2]    // 可以访问多行数据，但是df[2]是错误的
+</code></pre><p><strong>dataframe中的数组数据</strong></p>
 <pre><code>df.values                // 转换为数组数据
-df.数学                     // 等价于df[&apos;数学&apos;]
+df.数学                     // 等价于df[&#39;数学&#39;]
 df.数学.values
 df.数学.value_counts()    // 统计多少人得了多少分
-df[[&apos;数学&apos;, &apos;语文&apos;]].head()        // 提取多列将会成为一个子表格，可以使用head函数</code></pre><h2 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h2><pre><code>def func(score):
+df[[&#39;数学&#39;, &#39;语文&#39;]].head()        // 提取多列将会成为一个子表格，可以使用head函数
+</code></pre><h2 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h2><pre><code>def func(score):
     if score &gt;= 80:
         return &quot;优秀&quot;
     else if score &gt;= 70:
@@ -529,64 +559,78 @@ df[[&apos;数学&apos;, &apos;语文&apos;]].head()        // 提取多列将会
     else:
         return &quot;不及格&quot;
 
-df[&apos;数学分类&apos;] = df.数学.map(func)    //新增一列按照func函数填值
-map(func, data)</code></pre><hr>
+df[&#39;数学分类&#39;] = df.数学.map(func)    //新增一列按照func函数填值
+map(func, data)
+</code></pre><hr>
 <p>扩展：<strong>lambda函数（匿名函数）</strong></p>
 <pre><code>def func(number):
     return number+10
 # 等价于
-func = lambda number: number+10    </code></pre><hr>
-<pre><code>df.applymap(lambda x: str(x) + &apos;-&apos;)        // 对所有的列进行操作如尾部加‘-’
+func = lambda number: number+10    
+</code></pre><hr>
+<pre><code>df.applymap(lambda x: str(x) + &#39;-&#39;)        // 对所有的列进行操作如尾部加‘-’
 
 // 根据多列来生成新的一列
-df[&apos;new_score&apos;] = df.apply(lambda x: x.数学 + x.语文, axis = 1)     </code></pre><blockquote>
+df[&#39;new_score&#39;] = df.apply(lambda x: x.数学 + x.语文, axis = 1)     
+</code></pre><blockquote>
 <p>注：pandas 中的 dataframe 的操作，很大一部分和 numpy 中的二维数组的操作是近似的</p>
 </blockquote>
 <hr>
 <center><strong><font size = 8>第四部分：绘图</font></strong></center>
 
 <h1 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h1><pre><code>import matplotlib.pyplot as plt
-%matplotlib.inline         // 必不可少的，将图像画在notebook中</code></pre><p>作用：直观显示所得的数据</p>
+%matplotlib.inline         // 必不可少的，将图像画在notebook中
+</code></pre><p>作用：直观显示所得的数据</p>
 <hr>
 <h2 id="绘图plot"><a href="#绘图plot" class="headerlink" title="绘图plot"></a>绘图plot</h2><pre><code>fig = plt.figure()         // 画布图形
 x = np.linspare(0, 10, 100)
 
-// 画出cos函数图像，&apos;--&apos;表示用虚线，&apos;o&apos;表示点，红色
-plt.plot(x, np.cos(x), &apos;--&apos;, color = &apos;red&apos;)    
+// 画出cos函数图像，&#39;--&#39;表示用虚线，&#39;o&#39;表示点，红色
+plt.plot(x, np.cos(x), &#39;--&#39;, color = &#39;red&#39;)    
 
 fig.savefig(path)        // 保存图片
 
 plt.subplot(2,1,1)        // 生成第一个子画
 plt.subplot(2,1,2)        // 生成第二个子画
-/* 这两个为2行1列 */</code></pre><p><strong>加上标签</strong></p>
-<pre><code>plt.plot(x, y, &apos;-&apos;, color = &apos;red&apos;, table = &apos;sin(x)&apos;)
-plt.plot(x, np.cos(x), &apos;--&apos;,  &apos;black&apos;, table = &apos;cos(x)&apos;)
+/* 这两个为2行1列 */
+</code></pre><p><strong>加上标签</strong></p>
+<pre><code>plt.plot(x, y, &#39;-&#39;, color = &#39;red&#39;, table = &#39;sin(x)&#39;)
+plt.plot(x, np.cos(x), &#39;--&#39;,  &#39;black&#39;, table = &#39;cos(x)&#39;)
 
 # legend控制lable的显示效果，loc控制位置
 plt.legend(loc = 1)     // loc为1时标签上移
-/* 具体详情输入plt.legend? */</code></pre><p><strong>定义样式</strong></p>
-<pre><code>plt.style.use(&apos;classic&apos;)    // 运行一次就成为默认的样式了</code></pre><p><strong>其他plot参数</strong><br>|’-p’     |markersize|color|linewidth  |markeredgecolor|markeredgewidth|<br>|:——–|:———|:—-|:———-|:————–|:————–|<br>|样式五边形|五边形大小 |颜色 |各点连线宽度|五边形外框线颜色|五边形外框线宽度|</p>
+/* 具体详情输入plt.legend? */
+</code></pre><p><strong>定义样式</strong></p>
+<pre><code>plt.style.use(&#39;classic&#39;)    // 运行一次就成为默认的样式了
+</code></pre><p><strong>其他plot参数</strong><br>|’-p’     |markersize|color|linewidth  |markeredgecolor|markeredgewidth|<br>|:————|:————-|:——|:—————|:———————|:———————|<br>|样式五边形|五边形大小 |颜色 |各点连线宽度|五边形外框线颜色|五边形外框线宽度|</p>
 <blockquote>
 <p>注：plot可定制参数非常多plt.plot?</p>
 </blockquote>
 <h2 id="限定范围"><a href="#限定范围" class="headerlink" title="限定范围"></a>限定范围</h2><pre><code>plt.ylim(-0.5, 0.8)    // 限定y值域
-plt.xlim()    // 限定定义域</code></pre><h2 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h2><pre><code>plt.scatter?    // 参数很多，如：s大小、c颜色</code></pre><p>例子</p>
+plt.xlim()    // 限定定义域
+</code></pre><h2 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h2><pre><code>plt.scatter?    // 参数很多，如：s大小、c颜色
+</code></pre><p>例子</p>
 <pre><code>x = np.random.randn(100)
 y = np.random.randn(100)
 colors = np.random.rand(100)
 sizes = 100 * np.random.rand(100)
 plt.scatter(x, y, c = color, s = sizes, alpha = 0.4)
-plt.colorbar()    // 左侧颜色条</code></pre><hr>
+plt.colorbar()    // 左侧颜色条
+</code></pre><hr>
 <h1 id="Pandas本身自带绘图"><a href="#Pandas本身自带绘图" class="headerlink" title="Pandas本身自带绘图"></a>Pandas本身自带绘图</h1><p>上转Pandas操作DataFrame<br><strong>线形图</strong></p>
-<pre><code>df.plot()    // 绘图并默认添加列标签</code></pre><p><strong>柱状图</strong></p>
-<pre><code>df.plot(kind=&apos;bar&apos;)
+<pre><code>df.plot()    // 绘图并默认添加列标签
+</code></pre><p><strong>柱状图</strong></p>
+<pre><code>df.plot(kind=&#39;bar&#39;)
 等价于
 df.plot.bar()
 
-df.plot(kind=&apos;bar&apos;,stacked=True)    // 堆积成一个柱形，颜色不同</code></pre><p><strong>直方图</strong></p>
+df.plot(kind=&#39;bar&#39;,stacked=True)    // 堆积成一个柱形，颜色不同
+</code></pre><p><strong>直方图</strong></p>
 <pre><code>// A列直方图，加网格，figsize为图框大小
-df.hist(column = &apos;A&apos;, grid = True, figsize = (5,4))    </code></pre><p>注：%matplotlib.inline 必不可少的<br><strong>密度图</strong></p>
-<pre><code>df.plot.kde()</code></pre><p><strong>扩展</strong><br>可以绘画三维3D图形</p>
+df.hist(column = &#39;A&#39;, grid = True, figsize = (5,4))    
+</code></pre><p>注：%matplotlib.inline 必不可少的<br><strong>密度图</strong></p>
+<pre><code>df.plot.kde()
+</code></pre><p><strong>扩展</strong><br>可以绘画三维3D图形</p>
 <p>实战：泰坦尼克数据处理与分析（略）</p>
 
       
@@ -762,7 +806,7 @@ df.hist(column = &apos;A&apos;, grid = True, figsize = (5,4))    </code></pre><p
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number">1.</span> <span class="nav-text">爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python库"><span class="nav-number">1.1.</span> <span class="nav-text">Python库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个实例"><span class="nav-number">1.3.</span> <span class="nav-text">一个实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NumPy基本操作"><span class="nav-number">2.</span> <span class="nav-text">NumPy基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random"><span class="nav-number">2.2.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问数组元素"><span class="nav-number">2.3.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组属性"><span class="nav-number">2.4.</span> <span class="nav-text">数组属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组运算"><span class="nav-number">2.5.</span> <span class="nav-text">数组运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计类型"><span class="nav-number">2.6.</span> <span class="nav-text">统计类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notebook使用"><span class="nav-number">2.7.</span> <span class="nav-text">notebook使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">2.8.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形"><span class="nav-number">2.9.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">2.10.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">2.11.</span> <span class="nav-text">拼接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas基本操作"><span class="nav-number">3.</span> <span class="nav-text">Pandas基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#csv和DataFrame"><span class="nav-number">3.1.</span> <span class="nav-text">csv和DataFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#筛选"><span class="nav-number">3.2.</span> <span class="nav-text">筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序-1"><span class="nav-number">3.3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问索引"><span class="nav-number">3.4.</span> <span class="nav-text">访问索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map函数"><span class="nav-number">3.5.</span> <span class="nav-text">map函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlib"><span class="nav-number">4.</span> <span class="nav-text">matplotlib</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘图plot"><span class="nav-number">4.1.</span> <span class="nav-text">绘图plot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#限定范围"><span class="nav-number">4.2.</span> <span class="nav-text">限定范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#散点图"><span class="nav-number">4.3.</span> <span class="nav-text">散点图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas本身自带绘图"><span class="nav-number">5.</span> <span class="nav-text">Pandas本身自带绘图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number"></span> <span class="nav-text">爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python库"><span class="nav-number">1.</span> <span class="nav-text">Python库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个实例"><span class="nav-number">3.</span> <span class="nav-text">一个实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NumPy基本操作"><span class="nav-number"></span> <span class="nav-text">NumPy基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random"><span class="nav-number">2.</span> <span class="nav-text">random</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问数组元素"><span class="nav-number">3.</span> <span class="nav-text">访问数组元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组属性"><span class="nav-number">4.</span> <span class="nav-text">数组属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组运算"><span class="nav-number">5.</span> <span class="nav-text">数组运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计类型"><span class="nav-number">6.</span> <span class="nav-text">统计类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notebook使用"><span class="nav-number">7.</span> <span class="nav-text">notebook使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">8.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形"><span class="nav-number">9.</span> <span class="nav-text">变形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">10.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">11.</span> <span class="nav-text">拼接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas基本操作"><span class="nav-number"></span> <span class="nav-text">Pandas基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#csv和DataFrame"><span class="nav-number">1.</span> <span class="nav-text">csv和DataFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#筛选"><span class="nav-number">2.</span> <span class="nav-text">筛选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序-1"><span class="nav-number">3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问索引"><span class="nav-number">4.</span> <span class="nav-text">访问索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map函数"><span class="nav-number">5.</span> <span class="nav-text">map函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlib"><span class="nav-number"></span> <span class="nav-text">matplotlib</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#绘图plot"><span class="nav-number">1.</span> <span class="nav-text">绘图plot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#限定范围"><span class="nav-number">2.</span> <span class="nav-text">限定范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#散点图"><span class="nav-number">3.</span> <span class="nav-text">散点图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas本身自带绘图"><span class="nav-number"></span> <span class="nav-text">Pandas本身自带绘图</span></a></div>
             
 
           </div>
