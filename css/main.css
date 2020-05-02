@@ -1204,6 +1204,7 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+  color: #0d0d0d;
 }
 .menu .menu-item a:hover {
   border-bottom-color: #222;
@@ -1857,7 +1858,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #aa607a;
+  background: #ffee0e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2877,8 +2878,8 @@ hr {
   border-bottom-color: #222;
 }
 .posts-expand .post {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
@@ -2944,17 +2945,6 @@ hr {
     text-align: center;
   }
 }
-sidebar {
-  background: url("/images/sidebar.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-sidebar p,
-sidebar span,
-sidebar a {
-  color: #ffe1ff;
-}
 body {
   background: url("/images/black2.png");
   background-repeat: no-repeat;
@@ -2978,4 +2968,21 @@ body {
 }
 .footer-inner {
   color: #fff5ee;
+}
+.header {
+  background: url("/images/heard2.png");
+}
+.footer {
+  background: rgba(255,255,255,0) none repeat scroll !important;
+}
+.sidebar {
+  background: url("/images/sidebar.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.sidebar p,
+.sidebar span,
+.sidebar a {
+  color: #ffe1ff;
 }
