@@ -1857,7 +1857,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #03f734;
+  background: #854b21;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2945,7 +2945,7 @@ hr {
   }
 }
 body {
-  background: url("/images/black1.jpg");
+  background: url("/images/black2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -2966,5 +2966,5 @@ body {
   min-height: 500px;
 }
 .footer-inner {
-  color: #7b00b3;
+  color: #fff5ee;
 }
