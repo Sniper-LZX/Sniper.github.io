@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dark Knight</title>
+  
+  <subtitle>Hexo</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-04-05T04:06:24.751Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>SJ_Sniper</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI-历程</title>
+    <link href="http://yoursite.com/2020/04/04/AI-%E5%8E%86%E7%A8%8B/"/>
+    <id>http://yoursite.com/2020/04/04/AI-%E5%8E%86%E7%A8%8B/</id>
+    <published>2020-04-04T03:08:24.000Z</published>
+    <updated>2020-04-05T04:06:24.751Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;人工智能-历程&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="AI路程" scheme="http://yoursite.com/categories/AI%E8%B7%AF%E7%A8%8B/"/>
+    
+    
+      <category term="-Artificial Intellienges -科学计算 -Python爬虫" scheme="http://yoursite.com/tags/Artificial-Intellienges-%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97-Python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="http://yoursite.com/2020/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2020/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
+    <published>2020-04-03T02:14:51.000Z</published>
+    <updated>2020-05-02T10:45:11.201Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;学习思维导图&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="-学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL &amp; Python</title>
+    <link href="http://yoursite.com/2020/04/02/MySQL/"/>
+    <id>http://yoursite.com/2020/04/02/MySQL/</id>
+    <published>2020-04-02T03:49:58.000Z</published>
+    <updated>2020-04-04T13:36:23.710Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;Python操作MySQL&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="AI路程" scheme="http://yoursite.com/categories/AI%E8%B7%AF%E7%A8%8B/"/>
+    
+    
+      <category term="-数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python</title>
+    <link href="http://yoursite.com/2020/03/31/Python/"/>
+    <id>http://yoursite.com/2020/03/31/Python/</id>
+    <published>2020-03-31T12:21:16.000Z</published>
+    <updated>2020-04-02T12:04:20.801Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;python备忘录&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="AI路程" scheme="http://yoursite.com/categories/AI%E8%B7%AF%E7%A8%8B/"/>
+    
+    
+      <category term="-Pyhton编程 -Artificial Intellienges" scheme="http://yoursite.com/tags/Pyhton%E7%BC%96%E7%A8%8B-Artificial-Intellienges/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI</title>
+    <link href="http://yoursite.com/2020/03/03/AI/"/>
+    <id>http://yoursite.com/2020/03/03/AI/</id>
+    <published>2020-03-03T08:54:39.000Z</published>
+    <updated>2020-04-02T10:49:35.825Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;机器学习相关读书笔记&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="AI路程" scheme="http://yoursite.com/categories/AI%E8%B7%AF%E7%A8%8B/"/>
+    
+    
+      <category term="-Artificial Intellienges" scheme="http://yoursite.com/tags/Artificial-Intellienges/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AR</title>
+    <link href="http://yoursite.com/2020/01/27/augment/"/>
+    <id>http://yoursite.com/2020/01/27/augment/</id>
+    <published>2020-01-27T09:01:25.000Z</published>
+    <updated>2020-04-02T10:48:36.162Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;增强现实相关&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="-增强现实" scheme="http://yoursite.com/tags/%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>article</title>
+    <link href="http://yoursite.com/2020/01/26/article/"/>
+    <id>http://yoursite.com/2020/01/26/article/</id>
+    <published>2020-01-26T06:57:16.000Z</published>
+    <updated>2020-04-02T10:50:22.315Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;一些论文文献搜索网站&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="论文相关" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="-论文" scheme="http://yoursite.com/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="http://yoursite.com/2020/01/10/Hexo/"/>
+    <id>http://yoursite.com/2020/01/10/Hexo/</id>
+    <published>2020-01-10T01:49:24.745Z</published>
+    <updated>2020-04-02T10:53:09.347Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;Hexo相关配置&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo相关" scheme="http://yoursite.com/categories/Hexo%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="-Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

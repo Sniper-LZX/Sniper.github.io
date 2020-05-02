@@ -1705,6 +1705,35 @@ pre .javascript .function {
   overflow-y: auto;
   overflow-x: hidden;
 }
+.site-author-image {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  max-width: 96px;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.site-author-image {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  max-width: 96px;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  transition: 1.4s all;
+}
+.site-author-image:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -transform: rotate(360deg);
+}
 .sidebar-toggle {
   position: fixed;
   right: 30px;
@@ -1828,7 +1857,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d9861b;
+  background: #ffafff;
 }
 .links-of-blogroll {
   font-size: 13px;
