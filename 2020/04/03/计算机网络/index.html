@@ -102,8 +102,9 @@
 <meta property="og:image" content="http://yoursite.com/images/%E7%89%A9%E7%90%86%E5%B1%82.png">
 <meta property="og:image" content="http://yoursite.com/images/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%EF%BC%88%E4%B8%8A%EF%BC%89.png">
 <meta property="og:image" content="http://yoursite.com/images/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%EF%BC%88%E4%B8%8B%EF%BC%89.png">
+<meta property="og:image" content="http://yoursite.com/images/PPP.png">
 <meta property="article:published_time" content="2020-04-03T02:14:51.000Z">
-<meta property="article:modified_time" content="2020-05-03T12:44:22.072Z">
+<meta property="article:modified_time" content="2020-05-07T12:03:15.648Z">
 <meta property="article:author" content="SJ_Sniper">
 <meta property="article:tag" content="-学习">
 <meta name="twitter:card" content="summary">
@@ -332,8 +333,8 @@
             
               <span class="post-updated">
                 &nbsp; | &nbsp; 更新于
-                <time itemprop="dateUpdated" datetime="2020-05-03T20:44:22+08:00" content="2020-05-03">
-                  2020-05-03
+                <time itemprop="dateUpdated" datetime="2020-05-07T20:03:15+08:00" content="2020-05-07">
+                  2020-05-07
                 </time>
               </span>
             
@@ -482,7 +483,7 @@
 <li>信道传输的方式<ul>
 <li>单向通信【单工通信】</li>
 <li>双向交替通信【半双工】</li>
-<li>双向同时通信【全双工】<br>  注：一般不使用“【】”里的，因为有人也将双向交替通信称为“单工”。</li>
+<li>双向同时通信【全双工】<br>  注：严格来说不使用“【】”里的，因为有人也将双向交替通信称为“单工”。</li>
 </ul>
 </li>
 <li>因低频和直流的干扰需要进行调制。<ul>
@@ -512,7 +513,8 @@
 <p><strong> 答思考1：意义在于｛只要信息传输速率低于信道极限信息传输速率就一定会存在一种方法实现无差错传输｝</strong></p>
 <p><strong> 答思考2：编码，提高一个码元所能携带的信息量</strong></p>
 <h2 id="第三章-数据链路层"><a href="#第三章-数据链路层" class="headerlink" title="第三章 数据链路层"></a>第三章 数据链路层</h2><h3 id="总体图片-2"><a href="#总体图片-2" class="headerlink" title="总体图片"></a>总体图片</h3><p>上：（3.1、3.2）<br><img src="/images/数据链路层（上）.png" alt="alt"><br>下：（3.3、3.4、3.5）<br><img src="/images/数据链路层（下）.png" alt="alt"></p>
-<h3 id="内容概述-1"><a href="#内容概述-1" class="headerlink" title="内容概述"></a>内容概述</h3><ol>
+<h3 id="使用点对点信道的数据链路层"><a href="#使用点对点信道的数据链路层" class="headerlink" title="使用点对点信道的数据链路层"></a>使用点对点信道的数据链路层</h3><p>PPP协议——用户计算机和 ISP 进行通信时所使用的数据链路层协议</p>
+<ol>
 <li>两种信道：<ul>
 <li>点对点信道</li>
 <li>广播信道</li>
@@ -525,7 +527,89 @@
 <li>差错检测（误码率BER、循环冗余检测CRC、帧检测序列FCS）</li>
 </ul>
 </li>
-<li>点对点协议PPP</li>
+<li>点对点协议PPP的组成（只工作在全双工）<ul>
+<li>在串行链路上封装IP数据报的方法。PPP既支持异步链路（逐个字节传送）也支持同步链路（一连串的比特连续传送）</li>
+<li>一个用来建立、配置和测试数据链路的链路控制协议LCP</li>
+<li>一套网络控制协议NCP，支持不同的网络层协议</li>
+</ul>
+</li>
+<li>IP数据报作为PPP帧的数据部分，长度收到MTU的限制。为保证透明传输需使用：<ul>
+<li>字节填充：转移字符0x7D</li>
+<li>零比特填充（常用于同步传输中）：每5个连续1填充一个0</li>
+</ul>
+</li>
+<li>PPP协议的工作状态<ul>
+<li>连接</li>
+<li>释放</li>
+<li>过程</li>
+</ul>
+</li>
+<li>ppp协议状态图<br><img src="/images/PPP.png" alt="alt"></li>
+</ol>
+<hr>
+<script type="math/tex; mode=display">
+连接 \left\{
+\begin{array}{l}
+个人电脑→ISP：链路控制协议LCP分组（封装成多个PPP帧） \\ 
+ISP→个人电脑：网络控制协议NCP动态分配临时IP地址
+\end{array}
+\right.</script><hr>
+<script type="math/tex; mode=display">
+释放 \left\{
+\begin{array}{l}
+NCP释放网络层连接，回收IP \\
+LCP释放数据链路层连接 \\
+最后释放物理层连接
+\end{array}
+\right.</script><hr>
+<h3 id="使用广播信道的数据链路层"><a href="#使用广播信道的数据链路层" class="headerlink" title="使用广播信道的数据链路层"></a>使用广播信道的数据链路层</h3><p>局域网使用的就是广播信道</p>
+<ol>
+<li>局域网的数据链路层分为两个子层<ul>
+<li>逻辑链路控制LLC（逐渐淘汰）</li>
+<li>媒体接入控制MAC（以太网）</li>
+</ul>
+</li>
+<li>适配器的作用<ul>
+<li>进行数据串行传输和并行传输的准换——即调整计算机与局域网之间的通信</li>
+<li>装有对数据进行缓存的存储芯片——解决网络与主机总线数据率不同的问题</li>
+<li>驱动程序——将哪的多长的数据块发送出去或用哪个位置把数据块存储下来</li>
+</ul>
+</li>
+<li>CSMA/CD协议——载波监听多点接入/碰撞检测<ul>
+<li>载波监听——不停检测信道</li>
+<li>多点接入——总线型网络</li>
+<li>碰撞检测——边发送边监听</li>
+<li>双向交替通信（半双工）</li>
+<li>尽最大努力交付</li>
+<li>数据使用曼彻斯特编码（便于提取位同步，但所占频带宽度增加一倍）</li>
+</ul>
+</li>
+<li>帧间最小间隔9.6μs——为了使刚刚收的数据帧的站的接收缓存来得及处理，做好接收下一帧的准备</li>
+<li>碰撞后重传（截断二进制指数退避）<ul>
+<li>基本退避时间2τ = 51.2 μs（10 Mbit/s以太网）</li>
+<li>K = Min｛重传次数，10｝</li>
+<li>重传16次不成功则丢弃</li>
+</ul>
+</li>
+<li>强化碰撞<ul>
+<li>立即停止发送数据</li>
+<li>再继续发送32比特或48比特的人为干扰信号</li>
+</ul>
+</li>
+<li>过程<br> ①准备发送：网路层获得分组，封装成以太网帧，放入适配器的缓存中。<br> ②检测信道：忙则继续，空则先保持帧间最小间隔96比特空闲，再发送。<br> ③ 一：发送成功。二：发送失败：指数退避算法重传，16次及以上丢弃。</li>
+<li>以太网信道利用率<script type="math/tex; mode=display">S_{max} = \frac{T_0}{T_0 + τ}= \frac{1}{1+a}</script></li>
+<li>数据链路层扩展以太网——以太网交换机<ul>
+<li>实质是多结接口的网桥，同时连接多个接口（全双工）</li>
+<li>自学习功能（广播、生成树协议STP切除环路）</li>
+</ul>
+</li>
+<li>虚拟局域网限制广播信息的计算机数，避免广播风暴</li>
+<li>高速以太网：<ul>
+<li>快速以太网（全双工）</li>
+<li>吉比特以太网（支持全双工和半双工），其中载波延伸和分组突发只在半双工上才有，半双工必须进行碰撞检测</li>
+<li>10吉比特以太网和更快的以太网（只工作在全双工）</li>
+</ul>
+</li>
 </ol>
 
       
@@ -730,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-概论"><span class="nav-number">1.</span> <span class="nav-text">第一章 概论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体图片"><span class="nav-number">1.1.</span> <span class="nav-text">总体图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机在信息时代中的作用"><span class="nav-number">1.2.</span> <span class="nav-text">计算机在信息时代中的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网"><span class="nav-number">1.3.</span> <span class="nav-text">互联网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网的组成"><span class="nav-number">1.4.</span> <span class="nav-text">互联网的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#边缘部分"><span class="nav-number">1.4.1.</span> <span class="nav-text">边缘部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心部分"><span class="nav-number">1.4.2.</span> <span class="nav-text">核心部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-物理层"><span class="nav-number">2.</span> <span class="nav-text">第二章 物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体图片-1"><span class="nav-number">2.1.</span> <span class="nav-text">总体图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容概述"><span class="nav-number">2.2.</span> <span class="nav-text">内容概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-数据链路层"><span class="nav-number">3.</span> <span class="nav-text">第三章 数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体图片-2"><span class="nav-number">3.1.</span> <span class="nav-text">总体图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容概述-1"><span class="nav-number">3.2.</span> <span class="nav-text">内容概述</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-概论"><span class="nav-number">1.</span> <span class="nav-text">第一章 概论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体图片"><span class="nav-number">1.1.</span> <span class="nav-text">总体图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机在信息时代中的作用"><span class="nav-number">1.2.</span> <span class="nav-text">计算机在信息时代中的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网"><span class="nav-number">1.3.</span> <span class="nav-text">互联网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网的组成"><span class="nav-number">1.4.</span> <span class="nav-text">互联网的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#边缘部分"><span class="nav-number">1.4.1.</span> <span class="nav-text">边缘部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心部分"><span class="nav-number">1.4.2.</span> <span class="nav-text">核心部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-物理层"><span class="nav-number">2.</span> <span class="nav-text">第二章 物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体图片-1"><span class="nav-number">2.1.</span> <span class="nav-text">总体图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容概述"><span class="nav-number">2.2.</span> <span class="nav-text">内容概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-数据链路层"><span class="nav-number">3.</span> <span class="nav-text">第三章 数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体图片-2"><span class="nav-number">3.1.</span> <span class="nav-text">总体图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用点对点信道的数据链路层"><span class="nav-number">3.2.</span> <span class="nav-text">使用点对点信道的数据链路层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用广播信道的数据链路层"><span class="nav-number">3.3.</span> <span class="nav-text">使用广播信道的数据链路层</span></a></li></ol></li></ol></div>
             
 
           </div>
