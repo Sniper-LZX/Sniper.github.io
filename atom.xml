@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-05T04:06:24.751Z</updated>
+  <updated>2020-05-09T09:01:30.997Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Beauty of Mathematics</title>
+    <link href="http://yoursite.com/2020/05/09/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
+    <id>http://yoursite.com/2020/05/09/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/</id>
+    <published>2020-05-09T08:37:51.000Z</published>
+    <updated>2020-05-09T09:01:30.997Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;《数学之美》&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="-学习 -AI" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0-AI/"/>
+    
+  </entry>
   
   <entry>
     <title>AI-历程</title>
@@ -44,6 +63,25 @@
     <id>http://yoursite.com/2020/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
     <published>2020-04-03T02:14:51.000Z</published>
     <updated>2020-05-08T11:57:05.172Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;font size = 4&gt;学习思维导图&lt;/font&gt;&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="-学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="http://yoursite.com/2020/04/03/Study/"/>
+    <id>http://yoursite.com/2020/04/03/Study/</id>
+    <published>2020-04-03T02:14:51.000Z</published>
+    <updated>2021-01-05T03:04:47.927Z</updated>
     
     <summary type="html">
     
